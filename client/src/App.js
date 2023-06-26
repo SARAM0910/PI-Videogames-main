@@ -4,6 +4,7 @@ import Landing from './Views/Landing';
 import Home from './Views/Home';
 import Create from './Views/Create';
 import Detail from './Views/Detail';
+import About from './Views/About';
 
 
 
@@ -16,6 +17,7 @@ function App() {
     <Route exact path={'/Home'} element={<Home />} />
     <Route exact path={'/Create'} element={<Create />} />
     <Route exact path={'/Detail/:id'} element={<Detail />}/>
+    <Route exact path={'/About'} element={<About />}/>
   </Routes>
 </div>
   );

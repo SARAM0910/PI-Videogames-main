@@ -5,6 +5,9 @@ import { postVidegame, getPlatforms, getGenres } from "../redux/Actions";
 import { Link,} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { validationCreateForm } from "./ValidationsCreateForm";
+import style from "./Form.module.css"
+import iconoClose from "../Assets/IconoClose.jpg"
+
 
 export default function CreateForm() {
   const dispatch = useDispatch();
@@ -116,63 +119,77 @@ export default function CreateForm() {
     }
   }
   return (
-      <div>
+      <div className={style.FormContainer}>
         <div>
-          <Link to="/home">X</Link>
+          <Link to="/home">
+          <img src={iconoClose} alt="close" width='35px' height='35px'/>
+          </Link>
         </div>
-        <h1>¡Crea tu Videojuego!</h1>
-        <form action="newgame">
-          <div>
-            <label htmlFor="name">Name</label>
-            <input type="text" name='name' onChange={handleChange} value={input.name} />
-            <p>{errors.name}</p>
+        <h1 className={style.titleContainer}>¡Crea tu Videojuego!</h1>
+        <form className={style.formulario}action="newgame">
+
+          <div className={style.labelConatiner}>
+            <label className={style.labelStyle} htmlFor="name">Name</label>
+            <input className={style.inpuStileName}type="text" name='name' onChange={handleChange} value={input.name} />
           </div>
-          <div>
-            <label htmlFor="description">Description</label>
-            <input type="text" name='description'onChange={handleChange} value={input.description} />
-            <p>{errors.description}</p>
+          <div><p className={style.errorStyleName}>{errors.name}</p></div>
+
+          <div className={style.labelConatiner}>
+            <label className={style.labelStyle} htmlFor="description">Description</label>
+            <textarea className={style.inpuStileDescription}type="text" name='description'onChange={handleChange} value={input.description}/>
           </div>
-          <div>
-            <label htmlFor="image">Image</label>
-            <input type="text" name='image'onChange={handleChange} value={input.image} />
-            <p>{errors.image}</p>
+          <div><p className={style.errorStyleDescription}>{errors.description}</p></div>
+
+          <div className={style.labelConatiner}>
+            <label className={style.labelStyle} htmlFor="image">Image</label>
+            <input className={style.inpuStileImage} type="text" name='image'onChange={handleChange} value={input.image} />
           </div>
-          <div>
+          <div><p className={style.errorStyleImage}>{errors.image}</p></div>
+          <div className={style.labelConatiner}>
           {/* Agrega el elemento img para mostrar la imagen */}
           {input.image && <img src={input.image} alt="Game" />}
         </div>
-          <div>
-            <label htmlFor="released">Released</label>
-            <input type="text" placeholder='AAAA-MM-DD' name='released' onChange={handleChange} value={input.released} />
-            <p>{errors.released}</p>
+
+          <div className={style.labelConatiner}>
+            <label className={style.labelStyle} htmlFor="released">Released</label>
+            <input className={style.inpuStileReleased}type="text" placeholder='YYYY-MM-DD' name='released' onChange={handleChange} value={input.released} />
+          </div>
+          <div> <p className={style.errorStyleReleased}>{errors.released}</p></div>
+
+          <div className={style.labelConatiner}>
+            <label className={style.labelStyle} htmlFor="rating">Rating</label>
+            <input className={style.inpuStileRating} type="number" name='rating' onChange={handleChange} value={input.rating} />           
           </div>
           <div>
-            <label htmlFor="rating">Rating</label>
-            <input type="number" name='rating' onChange={handleChange} value={input.rating} />
-            <p>{errors.rating}</p>
-          </div>
-          <div>
-          <label htmlFor="genre">Genre</label>
-          <select
+            </div>
+            <div><p className={style.errorStyleRating}>{errors.rating}</p></div>
+
+
+          <div >
+          <label className={style.labelStyle} htmlFor="genre">Genre</label>
+          <select className={style.selectGenre}
             name="genre"
             multiple
             value={input.genre}
             onChange={handleSelectGenre}
           >
             {genres.map((genre) => (
-              <option key={genre.id} value={genre.name}>
+              <option  key={genre.id} value={genre.name}>
                 {genre.name}
               </option>
             ))}
           </select>
-          <div>
-            Selected Genre(s): {input.genre.join(", ")}
+
+          <div className={style.arrayGenresStyle}>
+           Selected Genre(s): {input.genre.join(", ")}
           </div>
-          <p>{errors.genre}</p>
+
+          <p className={style.arrayError}>{errors.genre}</p>
           </div>
+
           <div>
-          <label htmlFor="platform">Platforms:</label>
-          <select
+          <label className={style.labelStyle} htmlFor="platform">Platforms:</label>
+          <select className={style.selectPaltform}
             name="platform"
             multiple
             value={input.platform}
@@ -184,12 +201,16 @@ export default function CreateForm() {
               </option>
             ))}
             </select>
-            <div>
+
+            <div className={style.arrayGenresStyle}>
             Selected Platform(s): {input.platform.join(", ")}
           </div>
-          <p>{errors.platform}</p>
+
+          <p className={style.arrayError}>{errors.platform}</p>
           </div>
-          <button onClick={Handlesubmit}>Create</button>
+
+          <button className={style.createButton} onClick={Handlesubmit}>Create</button>
+
         </form>
       </div>
     );

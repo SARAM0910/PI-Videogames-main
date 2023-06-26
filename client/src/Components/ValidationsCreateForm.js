@@ -50,7 +50,7 @@ export function validationCreateForm (input){
     }
 
     if(!releasedRegex.test(released)){
-        errors.released='Please enter in format YYYY-MM-DD'
+        errors.released='Incorrect format'
     }
 
     if(rating>10){

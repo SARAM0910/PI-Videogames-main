@@ -1,0 +1,208 @@
+.FormContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    background-color: #08080850; ;
+    border: 3px groove;
+    border-radius: 10px;
+    border-color: #2b2026 ;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    padding: 20px;
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 20px;
+}
+.titleContainer{
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 40px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 10px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+
+.labelConatiner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.labelStyle{
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 30px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.inpuStileName{
+    width: 300px;
+    height: 30px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    border-radius: 8px;
+    margin-right: 170px;
+}
+.inpuStileDescription{
+    width: 300px;
+    height: 100px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    border-radius: 8px;
+    margin-right: 165px;
+    font-size: 15px;
+}
+
+.inpuStileRating{
+    width: 300px;
+    height: 30px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    border-radius: 8px;
+    margin-right: 170px;
+}
+
+.inpuStileImage{
+    width: 300px;
+    height: 30px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    border-radius: 8px;
+    margin-right: 170px;
+}
+
+.inpuStileReleased{
+    width: 300px;
+    height: 30px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    border-radius: 8px;
+    margin-right: 170px;
+}
+
+.selectGenre{
+    width: 300px;
+    height: 100px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    border-radius: 8px;
+    margin-left: 80px;
+    font-size: 15px;
+}
+
+.arrayGenresStyle{
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.selectPaltform{
+    width: 300px;
+    height: 100px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    border-radius: 8px;
+    margin-right: 80px;
+    font-size: 15px;
+}
+
+.errorStyleName{
+    font-family: 'Russo One', sans-serif;
+    color: rgb(124, 225, 238);
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.errorStyleDescription{
+    font-family: 'Russo One', sans-serif;
+    color: rgb(124, 225, 238);
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 60px;
+    margin-right:30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.errorStyleImage{
+    font-family: 'Russo One', sans-serif;
+    color: rgb(124, 225, 238);
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 60px;
+    margin-right:30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.errorStyleReleased{
+    font-family: 'Russo One', sans-serif;
+    color: rgb(124, 225, 238);
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 60px;
+    margin-right:30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.errorStyleRating{
+    font-family: 'Russo One', sans-serif;
+    color: rgb(124, 225, 238);
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 60px;
+    margin-right:30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.arrayError{
+    font-family: 'Russo One', sans-serif;
+    color: rgb(124, 225, 238);
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.createButton{
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+    color: white;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    background: #08080850;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    cursor: pointer;
+    margin-right: 100px;
+    margin-left: 350px;
+    margin-bottom: 10px;
+      
+}
+    
+.createButton:hover{
+    background-color: #ccc;;
+}
+

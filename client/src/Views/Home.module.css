@@ -1,0 +1,61 @@
+
+.titleContainer{
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 30px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-left: 40%;
+    margin-right: 30%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .cardsList{
+    width: auto;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    margin-top: 20px; 
+}
+
+.filtercontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:  #08080850;
+}
+
+.origintitle{
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 20px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+.resetButton{
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 15px;
+    color: white;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    background: #08080850;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    cursor: pointer;
+    margin-right: 30px;
+    margin-bottom: 10px;
+      
+}
+    
+.resetButton:hover{
+    background-color: #ccc;;
+}
+

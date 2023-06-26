@@ -1,4 +1,29 @@
-.App {
+*{
+  /* // selector universal* debe ir siempre al inicio del archivo de stilos para evitar los escrol horizontales */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* // con esto quito el scrol horizontal y me queda  la info del tamaño de la pantalla */
+}
+
+body {
+  font-family: 'Russo One', sans-serif;
+  background-image: url(./Assets/FondoLanding.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+code {
+  font-family: 'Russo One', sans-serif;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +60,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

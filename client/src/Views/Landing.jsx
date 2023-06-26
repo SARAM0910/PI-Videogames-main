@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import style from "./Landing.module.css"
 
 
 export default function Landing ({login, createUser}){
@@ -10,11 +11,18 @@ export default function Landing ({login, createUser}){
  }
 
     return (
-        <div>
-          <h1> bienvenidos</h1>
+      
+          <div className={style.welcomContainer}>
+          <div className={style.titleContainer}>
+          <h1> HELLO WINNER... </h1>
+          </div>
+          <div className={style.subTitleContainer}>
+          <h1>Time to play </h1>
+          </div>
           <div>
-            <button onClick={navigateHandler}>GET STARTED</button>
+            <button className={style.startButton} onClick={navigateHandler}>START</button>
           </div>
         </div>
+  
     )
 }

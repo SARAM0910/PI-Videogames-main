@@ -60,13 +60,30 @@ export function reset (){
 }
 
 export function searchByName (name){
-    return async function (dispatch){
-        let json = await axios.get (`http://localhost:3001/videogames/name?name=${name}`)
-        return dispatch({
-            type:SEARCH_BY_NAME,
-            payload:json.data
-        })
-    }
+
+    return async function(dispatch) {
+        try {
+          let json = await axios.get(`http://localhost:3001/videogames/name?name=${name}`);
+          
+          if (json.data.length === 0) {
+            alert('No se encontraron juegos con el nombre ingresado');
+          } else {
+            dispatch({
+              type: SEARCH_BY_NAME,
+              payload: json.data
+            });
+          }
+        } catch (error) {
+          alert('Videogame not found');
+        }
+      }
+    // return async function (dispatch){
+    //     let json = await axios.get (`http://localhost:3001/videogames/name?name=${name}`)
+    //     return dispatch({
+    //         type:SEARCH_BY_NAME,
+    //         payload:json.data
+    //     })
+    // }
 }
 
 export function getGenres (){

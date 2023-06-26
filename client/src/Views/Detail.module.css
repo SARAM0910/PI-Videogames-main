@@ -1,0 +1,66 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 750px;
+    height: auto;
+    background-color: #0c0b0cee ;
+    border: 3px groove;
+    border-radius: 10px;
+    border-color: #2b2026 ;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    padding: 20px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.imageContainer{
+    position: relative;
+    /* // modifica en cualquier elemeto que tenga posicion absoluta */
+    text-align: center;
+    display: inline-block;
+    width:600px;
+    height:auto;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px 3px #9993975b;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+.img{
+    display: block; 
+    width: 600px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px groove;
+    border-color: rgba(131, 80, 107, 0.685) ;
+}
+
+.titleContainer{
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 20px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-bottom: 5px;
+    margin-right: 100px;
+    margin-left: 200px;
+  }
+
+.atributesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Russo One', sans-serif;
+    color: white;
+    font-size: 15px;
+    -webkit-text-stroke: 0.5px rgb(39, 37, 37);
+    text-shadow: 3px 3px 2.5px rgba(8, 0, 0, 0.705);
+    margin-bottom: 15px;
+    width: 600px;
+    margin-left: 200px;
+    margin-right: 100px;
+  }
+

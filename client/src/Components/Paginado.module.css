@@ -33,3 +33,7 @@
   .paginado li a:hover {
     background-color: #ccc;
   }
+  
+  .paginado ul li a.activePage{
+    background-color: #a79a9a;
+  }

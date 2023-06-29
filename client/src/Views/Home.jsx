@@ -49,18 +49,22 @@ export default function Home() {
   };
 
   function handleFilterByGenre(e) {
-    dispatch(filterVideogamesByGenre(e.target.value));
+    dispatch(filterVideogamesByGenre(e.target.value))
+    setCurrentPage(1)
   }
 
   function handleCreated(e) {
     dispatch(filterCreated(e.target.value));
+    setCurrentPage(1)
   }
   function handleOrder(e) {
     dispatch(orderByRating(e.target.value));
+    setCurrentPage(1)
   }
 
   function handleAlphabetOrder(e) {
     dispatch(orderByalphabet(e.target.value));
+    setCurrentPage(1)
   }
 
   function handleReset() {
@@ -120,13 +124,6 @@ export default function Home() {
         </select>
         </div>
         <div className={style.filtercontainer}>
-        <h2 className={style.origintitle}>Rating</h2>
-                <select className= {style.select} onChange={handleOrder}> {/* filtro de rating */}
-                <option value="Descendente">Mayor</option>
-                <option value="Ascendente">Minor</option>
-            </select>
-        </div>
-        <div className={style.filtercontainer}>
           <button className={style.resetButton}onClick={handleReset}>Reset</button>
         </div>
       </div>
@@ -150,6 +147,7 @@ export default function Home() {
         videogamePerPage={videogamesPerPage}
         allVideogames={allVideogames.length}
         paginado={paginado}
+        currentPage ={currentPage}
       />
     </div>
   );

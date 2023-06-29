@@ -5,10 +5,12 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
+    width: 500px;
+    height: auto;
     transform: translate(-50%, -50%);
-    background-color: #0c0b0c83;
+    background-color: #0c0b0cb0;
     padding: 10px;
     margin: 10px;
     border: 1px groove;
@@ -54,3 +56,15 @@
   .startButton:hover{
     background-color: #ccc;;
   }
+
+  .logoContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .logo{
+    margin-top: 7px;
+    margin-right: 10px;
+}

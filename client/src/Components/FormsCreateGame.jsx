@@ -56,46 +56,66 @@ export default function CreateForm() {
   }
 
   function handleSelectGenre (e){
-    setInnput({
-      ...input,
-      genre : [...input.genre,e.target.value]
-    })
+    const selectedGenre = e.target.value;
 
-    setErrors(validationCreateForm({
-      ...input,
-      genre : [...input.genre,e.target.value]
-    }))
+  // Verifico si el género ya está presente en el array
+  if (input.genre.includes(selectedGenre)) {
+    return; // No se realiza ninguna acción si ya está presente
   }
+  setInnput((prevInput) => ({
+    ...prevInput,
+    genre: [...prevInput.genre, selectedGenre],
+  }));
 
+  setErrors(validationCreateForm({
+    ...input,
+    genre: [...input.genre, selectedGenre],
+  }));
+}
   
   function handleSelectPlatform (e){
-    setInnput({
-      ...input,
-      platform : [...input.platform,e.target.value]
-    })
+    const selectedPlatform = e.target.value
 
-    setErrors(validationCreateForm({
-      ...input,
-      platform : [...input.platform,e.target.value]
-    }))
+    // Verifico si la plataforma ya está presente en el array
+  if (input.platform.includes(selectedPlatform)) {
+    return; // No se realiza ninguna acción si ya está presente
   }
+  setInnput((prevInput) => ({
+    ...prevInput,
+    platform: [...prevInput.platform, selectedPlatform],
+  }));
 
-  // function Handlesubmit (e){
-  //   e.preventDefault()
-  //   dispatch(postVidegame(input))
-  //   alert ('Game created')
-  //   setInnput({
-  //   name: "",
-  //   description: "",
-  //   image: "",
-  //   released: "",
-  //   rating: "",
-  //   genre: [],
-  //   platform: [],
-  //   })
-  //   navigate('/Home')
+  setErrors(validationCreateForm({
+    ...input,
+    platform: [...input.platform, selectedPlatform],
+  }));
+}
 
-  // }
+function handleRemovePlatform(platform) {
+  setInnput((prevInput) => ({
+    ...prevInput,
+    platform: prevInput.platform.filter((p) => p !== platform),
+  }));
+
+  setErrors((prevErrors) => ({
+    ...prevErrors,
+    platform: "",
+  }));
+}
+
+function handleRemoveGenre(genre) {
+  setInnput((prevInput) => ({
+    ...prevInput,
+    genre: prevInput.genre.filter((g) => g !== genre),
+  }));
+
+  setErrors((prevErrors) => ({
+    ...prevErrors,
+    genre: "",
+  }));
+}
+
+
   function Handlesubmit(e) {
     e.preventDefault();
     
@@ -147,7 +167,7 @@ export default function CreateForm() {
           <div><p className={style.errorStyleImage}>{errors.image}</p></div>
           <div className={style.labelConatiner}>
           {/* Agrega el elemento img para mostrar la imagen */}
-          {input.image && <img src={input.image} alt="Game" />}
+          {input.image && <img src={input.image} alt="Game" width='300px' height='auto'/>}
         </div>
 
           <div className={style.labelConatiner}>
@@ -180,9 +200,24 @@ export default function CreateForm() {
             ))}
           </select>
 
-          <div className={style.arrayGenresStyle}>
+          {/* <div className={style.arrayGenresStyle}>
            Selected Genre(s): {input.genre.join(", ")}
-          </div>
+          </div> */}
+
+<div className={style.arrayGenresStyle}>
+Selected Genre(s)::{" "}
+  {input.genre.map((genre) => (
+    <span key={genre}>
+      {genre}
+      <button
+        className={style.removeButton}
+        onClick={() => handleRemoveGenre(genre)}
+      >
+        X
+      </button>
+    </span>
+     ))}
+     </div>
 
           <p className={style.arrayError}>{errors.genre}</p>
           </div>
@@ -202,9 +237,24 @@ export default function CreateForm() {
             ))}
             </select>
 
-            <div className={style.arrayGenresStyle}>
+            {/* <div className={style.arrayGenresStyle}>
             Selected Platform(s): {input.platform.join(", ")}
-          </div>
+          </div> */}
+
+<div className={style.arrayGenresStyle}>
+  Selected Platform(s):{" "}
+  {input.platform.map((platform) => (
+    <span key={platform}>
+      {platform}
+      <button
+        className={style.removeButton}
+        onClick={() => handleRemovePlatform(platform)}
+      >
+        X
+      </button>
+    </span>
+  ))}
+</div>
 
           <p className={style.arrayError}>{errors.platform}</p>
           </div>

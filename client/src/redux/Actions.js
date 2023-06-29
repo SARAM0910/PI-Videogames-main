@@ -14,6 +14,7 @@ export const GET_GENRES = 'GET_GENRES'
 export const POST_GAME = 'POST_GAME'
 export const GET_PLATFORMS = 'GET_PLATFORMS'
 export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID'
+export const CLEAR_DETAIL = 'CLEAR_DETAIL'
 
 
 
@@ -57,14 +58,15 @@ export function orderByalphabet(payload){
 
 export function reset (){
     return{type:RESET}
+
 }
 
-export function searchByName (name){
 
-    return async function(dispatch) {
+export function searchByName(name) {
+    return async function(dispatch) {      
         try {
           let json = await axios.get(`http://localhost:3001/videogames/name?name=${name}`);
-          
+  
           if (json.data.length === 0) {
             alert('No se encontraron juegos con el nombre ingresado');
           } else {
@@ -75,16 +77,12 @@ export function searchByName (name){
           }
         } catch (error) {
           alert('Videogame not found');
-        }
-      }
-    // return async function (dispatch){
-    //     let json = await axios.get (`http://localhost:3001/videogames/name?name=${name}`)
-    //     return dispatch({
-    //         type:SEARCH_BY_NAME,
-    //         payload:json.data
-    //     })
-    // }
+ }
 }
+}
+  
+     
+
 
 export function getGenres (){
     return async function (dispatch){
@@ -125,4 +123,10 @@ export function getVideogameById (id){
             payload: json.data
         })
     }
+}
+
+export function clearDetail(){
+    return {
+        type: CLEAR_DETAIL,
+    } 
 }

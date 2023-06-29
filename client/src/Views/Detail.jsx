@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getVideogameById } from "../redux/Actions";
+import { clearDetail, getVideogameById } from "../redux/Actions";
 import style from "./Detail.module.css"
 import iconoClose from "../Assets/IconoClose.jpg"
+
 
 
 // Función para eliminar etiquetas HTML de un texto
@@ -24,6 +25,9 @@ export default function Detail(){
 
     useEffect(()=>{
         dispatch(getVideogameById(id))
+        return()=>{
+          dispatch(clearDetail())  //Setea lo renderizado anteriormene para que se desmonte al volver de detail a home
+        }
     },[dispatch,id])
 
     if (!detail) {
